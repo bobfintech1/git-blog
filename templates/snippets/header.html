@@ -1,0 +1,109 @@
+{% load static %}
+<nav class="navigation">
+    <a href="" class="navigation_logo"><img src="{% static 'img/logo-full.png' %}" alt=""></a>
+    <button class="menu_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="navigation_list">
+        <li class="navigation_items">
+            <span class="navigation_link">
+                О компании
+            </span>
+            <div class="navigation_dropdown">
+                <ul>
+                    <li>
+                        <a href="">О нас</a>
+                    </li>
+                    <li>
+                        <a href="">Партнеры</a>
+                    </li>
+                    <li>
+                        <a href="">Карьера</a>
+                    </li>
+                    <li>
+                        <a href="">Загрузки</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="navigation_items">
+            <a href="{% url 'project:project_page' %}" class="navigation_link">
+                Проекты
+            </a>
+        </li>
+        <li class="navigation_items">
+            <a href="{% url 'portfolio:port_page' %}" class="navigation_link">
+                Портфолио
+            </a>
+        </li>
+        <li class="navigation_items">
+            <a href="{% url 'news:news_page' %}" class="navigation_link">
+                Новости
+            </a>
+        </li>
+        <li class="navigation_items">
+            <a href="" class="navigation_link">Контакты</a>
+        </li>
+
+        <form action="" method="post">
+
+
+            <li class="navigation_items">
+                <span href="" class="navigation_link lang_link">
+                    {{ LANGUAGE_CODE }} <span>&#9660;</span>
+                </span>
+                <div class="navigation_dropdown lang_dropdown">
+                    <input name="next" type="hidden" value="{{ request.get_full_path}}" />
+                    <ul class="nav navbar-nav navbar-right language menu">
+
+                        {% for language in languages %}
+                        <li>
+                            <button type="submit"
+                                    name="language"
+                                    value="{{ language.code }}"
+                                    class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
+                                {{ language.name_local }}
+                            </button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </form>
+
+    </ul>
+</nav>
+<!-- responsive mobile menu -->
+<div class="mobile_menu">
+    <ul class="link_list">
+        <li>
+            <a href="" data-toggle="collapse">О компании</a>
+            <div id="demo" class="collapse">
+                <div class="collapse_list">
+                    <a href="">О нас</a>
+                    <a href="">Партнеры</a>
+                    <a href="">Карьера</a>
+                    <a href="">Загрузки</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="{% url 'project:project_page' %}">Проекты</a></li>
+        <li><a href="{% url 'portfolio:port_page' %}">Портфолио</a></li>
+        <li><a href="{% url 'news:news_page' %}">Новости</a></li>
+        <li><a href="">Контакты</a></li>
+    </ul>
+    <p>Выбор языка:</p>
+    <ul class="lang_list">
+        <li><a href="">Uz</a></li>
+        <li><a href="" class="active">Ru</a></li>
+        <li><a href="">En</a></li>
+    </ul>
+    <ul class="social_icons">
+        <li><a href=""><img src="{% static 'img/facebook-w.svg' %}" alt=""></a></li>
+        <li><a href=""><img src="{% static 'img/telegram-w.svg' %}" alt=""></a></li>
+        <li><a href=""><img src="{% static 'img/instagram-w.svg' %}" alt=""></a></li>
+        <li><a href=""><img src="{% static 'img/whatsapp-w.svg' %}" alt=""></a></li>
+    </ul>
+</div>

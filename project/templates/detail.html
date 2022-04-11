@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="header_promo other_pages_header">
+    <div class="header_promo_background" style="background-image: url({% static 'img/promo.jpg' %})"></div>
+    <div class="video_overlay"></div>
+    <div class="header_promo_video">
+        <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+               src="{% static 'promo/promo_header.mp4' %}"></video>
+    </div>
+    <div class="header_promo_title">
+        <h1><span>НАПРАВЛЕНИЯ КОМПАНИИ</span></h1>
+        <ul class="header_promo_breadcrumbs">
+            <li>
+                <a href="{% url 'small:small-list' %}">Главная</a><i>/</i>
+            </li>
+            <li>
+                        <span>
+                            ПРОЕКТЫ
+                        </span>
+            </li>
+        </ul>
+    </div>
+</header>
+
+
+<div class="post-entry">
+    <h1>{{ project.title }}</h1>
+    <h1>{{ project.body }}</h1>
+    <p>{{ project.author.username }}</p>
+    <h3> {{ project.primer  }} </h3>
+
+
+</div>
+{% endblock %}

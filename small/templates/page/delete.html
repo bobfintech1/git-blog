@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="header_promo">
+    <div class="header_promo_background" style="background-image: url({% static 'img/promo.jpg' %})"></div>
+    <div class="video_overlay"></div>
+    <div class="header_promo_video">
+        <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+               src="{% static 'promo/promo_header.mp4' %}"></video>
+    </div>
+    </div>
+    <div class="header_promo_title">
+
+    </div>
+</header>
+
+
+
+
+<div class="post-entry">
+    <h1>DELETE NEWS</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p> Точно хотите удалить"{{ small.title }}"</p>
+        <input type="submit" value="ДА" />
+    </form>
+
+    </form>
+</div>
+
+{% endblock %}

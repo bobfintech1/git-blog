@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<header class="header_promo">
+    <div class="header_promo_background" style="background-image: url({% static 'img/promo.jpg' %})"></div>
+    <div class="video_overlay"></div>
+    <div class="header_promo_video">
+        <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+               src="{% static 'promo/promo_header.mp4' %}"></video>
+    </div>
+    </div>
+    <div class="header_promo_title">
+
+    </div>
+</header>
+
+
+
+<section class="news">
+    <div class="container">
+        <div class="row">
+            {% for small in object_list %}
+
+                <div class="col-md-4">
+                    <div class="news_item">
+                        <a href="">
+                            <div class="news_image">
+                                <img src="{% static 'img/about.jpg' %}" alt="">
+                            </div>
+                            <div class="news_caption">
+                                <a class="tn-date" href=""><i class="far fa-clock"></i>{{ small.primer }}</a>
+                                <a class="tn-title" href="{% url 'small:detail' small.id %}">{{ small.title}}</a>
+                            <h5>
+                                {{ small.body }}
+                            </h5>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
