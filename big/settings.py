@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'project.apps.ProjectConfig',
     'news.apps.NewsConfig',
     'portfolio.apps.PortfolioConfig',
+
+    'omg.apps.OmgConfig',
 ]
 
 MIDDLEWARE = [

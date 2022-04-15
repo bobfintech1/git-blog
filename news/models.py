@@ -19,3 +19,11 @@ class NewsModel(models.Model):
     #     return reverse('news:detail', args=[str(self.id)])
 
 
+class ArticleModel(models.Model):
+    title = models.CharField(max_length=15, null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
+    primer = models.DateField('Date', default=date.today, null=True, blank=True)
+
+
+    def __str__(self):
+        return str(self.title)

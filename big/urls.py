@@ -25,6 +25,7 @@ urlpatterns = [
     path('project/', include("project.urls", namespace='project_page')),
     path('news/', include("news.urls", namespace='news_page')),
     path('port/', include("portfolio.urls", namespace='port_page')),
+
 ]
 
 

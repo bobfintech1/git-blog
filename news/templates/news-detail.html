@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-
 <header class="header_promo other_pages_header">
     <div class="header_promo_background" style="background-image: url({% static 'img/promo.jpg' %})"></div>
     <div class="video_overlay"></div>
@@ -11,14 +10,14 @@
                src="{% static 'promo/promo_header.mp4' %}"></video>
     </div>
     <div class="header_promo_title">
-        <h1><span>НОВОСТИ</span></h1>
+        <h1><span>НАПРАВЛЕНИЯ КОМПАНИИ</span></h1>
         <ul class="header_promo_breadcrumbs">
             <li>
-                <a href="">Главная</a><i>/</i>
+                <a href="{% url 'small:small-list' %}">Главная</a><i>/</i>
             </li>
             <li>
                         <span>
-                            НОВОСТИ
+                            ПРОЕКТЫ
                         </span>
             </li>
         </ul>
@@ -27,10 +26,10 @@
 
 
 <div class="post-entry">
-    <h1>{{ news.title }}</h1>
-    <h1>{{ news.body }}</h1>
-    <p>{{ news.author.username }}</p>
-    <h3> {{ news.primer  }} </h3>
+    <h1>{{ news1.title }}</h1>
+    <h1>{{ news1.body }}</h1>
+    <p>{{ news1.author.username }}</p>
+    <h3> {{ news1.primer  }} </h3>
 
 
 </div>

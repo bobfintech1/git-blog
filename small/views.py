@@ -12,7 +12,7 @@ class WorkView(ListView):
 
 class WorkDetailView(DetailView):
     model = WorkModel
-    template_name = 'page/detail.html'
+    template_name = 'page/news-porfolio-detail.html'
     context_object_name = 'small'
 
 class WorkAddView(CreateView):

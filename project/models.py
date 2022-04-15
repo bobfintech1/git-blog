@@ -15,7 +15,15 @@ class ProjectModel(models.Model):
         return str(self.title)
 
 
-    def get_absolute_url(self):
-        return reverse('project:detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     return reverse('project:detail', args=[str(self.id)])
 
-# Create your models here.
+
+class ProjectArticleModel(models.Model):
+    title = models.CharField(max_length=15)
+    body = models.TextField()
+    primer = models.DateField('Date', default=date.today)
+
+
+    def __str__(self):
+        return str(self.title)
